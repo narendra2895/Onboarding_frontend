@@ -1,0 +1,172 @@
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  color: #1a1a1a;
+}
+
+.landing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+p {
+  max-width: 600px;
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 2rem;
+}
+
+button {
+  background-color: #e00751;
+  color: white;
+  font-size: 1rem;
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+button:hover {
+  background-color: #c40646;
+}
+
+.form-wrapper {
+  padding: 2rem;
+  z-index: 10;
+}
+
+
+/* //company details  */
+.form-container {
+  max-width: 600px;
+  margin: auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background: #ffffff;
+  border-radius:1rem ;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.radio-group {
+  display: flex;
+  gap: 2rem;
+  margin-top: 0.5rem;
+}
+
+input,
+select,
+textarea {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: #f9f9f9;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.primary-btn {
+  background-color: #e00751;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 12px;
+  cursor: pointer;
+  align-self: flex-end;
+}
+
+.primary-btn:hover {
+  background-color: #c40646;
+}
+
+.tooltip {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.85rem;
+  color: #666;
+  font-weight: 400;
+}
+
+
+/* progress bar  */
+.progress-wrapper {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.progress-bar {
+  height: 10px;
+  background-color: #eee;
+  border-radius: 10px;
+  overflow: hidden;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: #e00751;
+  transition: width 0.3s ease-in-out;
+}
+
+.progress-label {
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  color: #555;
+}
+
+.landing-background {
+  background-image: url('https://t4.ftcdn.net/jpg/06/57/20/69/360_F_657206985_7JnPZxrSIP9L6Pk3dyf9i8ljFEpv8iqZ.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.landing-background::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(255, 255, 255, 0.75); /* white overlay with reduced opacity */
+  z-index: 1;
+}
+
+.landing {
+  position: relative;
+  height:100%;
+  z-index: 5;
+  text-align: center;
+  padding: 2rem;
+  /* background: rgba(255, 255, 255, 0.9); */
+  border-radius: 8px;
+}

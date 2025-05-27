@@ -132,7 +132,7 @@ function Step8_AdditionalPeople({ next, prev, data }) {
     };
 
     try {
-      const res = await fetch('http://localhost:5000/api/onboarding', {
+      const res = await fetch('https://onboardingproject-f1647269a8b6.herokuapp.com/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(fullData),

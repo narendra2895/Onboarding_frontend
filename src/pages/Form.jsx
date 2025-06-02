@@ -49,19 +49,15 @@ function Form() {
   return (
     <div className="form-wrapper">
       {/* Header */}
-      <div className="form-header" style={{
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        margin: '0rem 2rem 2rem'
-      }}>
-        <h2 style={{ margin: 0 }}>Company Registration Form</h2>
-        <img 
-          src="https://cdn.prod.website-files.com/64104989294ba00431b916de/64108eacccaabfaf580a6981_crunch%20logo.svg" 
-          alt="Crunch Logo" 
-          style={{ height: '40px' }}
-        />
-      </div>
+      <div className="form-header">
+  <h2 className="form-title">Company Registration Form</h2>
+  <img 
+    src="https://cdn.prod.website-files.com/64104989294ba00431b916de/64108eacccaabfaf580a6981_crunch%20logo.svg" 
+    alt="Crunch Logo" 
+    className="form-logo"
+  />
+</div>
+
 
       {/* Progress Bar */}
       {step > 0 && <ProgressBar step={step + 1} totalSteps={steps.length} />}

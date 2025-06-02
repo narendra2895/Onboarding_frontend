@@ -120,3 +120,4 @@ function Step1_CompanyDetails({ next, data }) {
 }
 
 export default Step1_CompanyDetails;
+

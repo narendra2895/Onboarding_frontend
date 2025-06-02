@@ -9,13 +9,29 @@ function Step1_CompanyDetails({ next, data }) {
     activity: data.activity || '',
   });
 
+  const [errors, setErrors] = useState({});
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm(prev => ({ ...prev, [name]: value }));
+    setErrors(prev => ({ ...prev, [name]: '' })); // Clear error on change
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // Regex to validate company name
+    const companyNameValid = /(Ltd|Limited)\.?$/i.test(form.companyName.trim());
+
+    if (!companyNameValid) {
+      setErrors(prev => ({
+        ...prev,
+        companyName: 'Company name must end with "Ltd", "LTD", "Limited", or "LIMITED".',
+      }));
+      return;
+    }
+
+    setErrors({});
     next(form);
   };
 
@@ -52,7 +68,7 @@ function Step1_CompanyDetails({ next, data }) {
           What's your business going to be called?
           {form.incorporated === 'No' && (
             <span className="tooltip">
-               Please provide the exact spelling of your business name,
+              Please provide the exact spelling of your business name,
               including if it's going to be Limited or Ltd.
             </span>
           )}
@@ -64,6 +80,9 @@ function Step1_CompanyDetails({ next, data }) {
           onChange={handleChange}
           required
         />
+        {errors.companyName && (
+          <p className="error-message">{errors.companyName}</p>
+        )}
       </div>
 
       {form.incorporated && (
@@ -74,14 +93,13 @@ function Step1_CompanyDetails({ next, data }) {
               : 'When do you intend to start working through the business?'}
           </label>
           <input
-  type="date"
-  name="incorporationDate"
-  value={form.incorporationDate}
-  onChange={handleChange}
-  required
-  min={form.incorporated === 'No' ? new Date().toISOString().split('T')[0] : undefined}
-/>
-
+            type="date"
+            name="incorporationDate"
+            value={form.incorporationDate}
+            onChange={handleChange}
+            required
+            min={form.incorporated === 'No' ? new Date().toISOString().split('T')[0] : undefined}
+          />
         </div>
       )}
 
